@@ -17,11 +17,15 @@
                 <div class="map" id="map_canvas1"></div>
 
                 <script type="text/javascript">
-                    var div = document.getElementById("map_canvas1");
-                    var map = plugin.google.maps.Map.getMap(div);
-                    map.one(plugin.google.maps.event.MAP_READY, function() {
-                      console.log("--> map_canvas1 : ready.");
-                    });
+
+                    document.addEventListener("deviceready", function() {
+
+                        var div = document.getElementById("map_canvas1");
+                        var map = plugin.google.maps.Map.getMap(div);
+                        map.one(plugin.google.maps.event.MAP_READY, function() {
+                          console.log("--> map_canvas1 : ready.");
+                        });
+                    }, false);
                 </script>
             </section>
         </div>
