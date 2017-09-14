@@ -14,15 +14,21 @@
 </head>
 
 <body>
-    <div class="map" id="map_canvas1"></div>
+    <div id="contentView">
+        <div id="contentsFrame">
+            <section class="demo">
+                <div class="map" id="map_canvas1"></div>
 
-    <script type="text/javascript">
-        var div = document.getElementById("map_canvas1");
-        var map = plugin.google.maps.Map.getMap(div);
-        map.one(plugin.google.maps.event.MAP_READY, function() {
-          console.log("--> map_canvas1 : ready.");
-        });
-    </script>
+                <script type="text/javascript">
+                    var div = document.getElementById("map_canvas1");
+                    var map = plugin.google.maps.Map.getMap(div);
+                    map.one(plugin.google.maps.event.MAP_READY, function() {
+                      console.log("--> map_canvas1 : ready.");
+                    });
+                </script>
+            </section>
+        </div>
+    </div>
 </body>
 
 </html>
