@@ -57,12 +57,4 @@ window.addEventListener('load', function() {
   });
 });
 
-function ExibeMapa() {
 
-    var div = document.getElementById("map_canvas1");
-    var map = plugin.google.maps.Map.getMap(div);
-
-    map.one(plugin.google.maps.event.MAP_READY, function() {
-        console.log("--> map_canvas1 : ready.");
-      });
-} 
