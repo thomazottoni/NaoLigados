@@ -33,16 +33,12 @@
                         var div = document.getElementById("map_canvas1");
                         map = plugin.google.maps.Map.getMap(div);
 
-                        // Wait until the map is ready status.
-                        map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
+                        map.one(plugin.google.maps.event.MAP_READY, function() {
+                            console.log("--> map_canvas1 : ready.");
+                          });
                         
                     }, false);
 
-                    function onMapReady() {
-                      map.one(plugin.google.maps.event.MAP_READY, function() {
-                          console.log("--> map_canvas1 : ready.");
-                        });
-                    }
                 </script>
 
             </section>
