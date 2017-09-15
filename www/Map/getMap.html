@@ -27,18 +27,21 @@
                 </p>
                 <div class="map" id="map_canvas1"></div>
                 <script type="text/javascript">
-                    setTimeout(function() {
-                      var map;
-                      document.addEventListener("deviceready", function() {
+                    function executeCode() {
+
+                      setTimeout(function() {
                           var div = document.getElementById("map_canvas1");
-                          map = plugin.google.maps.Map.getMap(div);
+                          var map = plugin.google.maps.Map.getMap(div);
 
                           map.one(plugin.google.maps.event.MAP_READY, function() {
                               console.log("--> map_canvas1 : ready.");
                             });
-                          
-                      }, false);
-                    }, 1000);
+                      }, 1000);
+                    } 
+
+                    document.addEventListener("deviceready", function() {
+                       executeCode();       
+                    }, false);
 
                 </script>
 
