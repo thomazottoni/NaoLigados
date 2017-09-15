@@ -17,18 +17,5 @@ function executeCode(pTag, loadDelay) {
 }
 
 function showVirtualDialog(parentDiv, message) {
-  var virtualDialog = document.createElement("div");
-  virtualDialog.className = "virtualDialog";
-  var text = document.createElement("div");
-  text.innerText = message;
-  text.style.width="200px";
-  text.style.height="50px";
-  virtualDialog.appendChild(text);
-  virtualDialog.addEventListener("click", function() {
-    parentDiv.removeChild(virtualDialog);
-    virtualDialog.removeEventListener("click", arguments.callee);
-    virtualDialog = null;
-  });
-  parentDiv.appendChild(virtualDialog);
-  return virtualDialog;
+
 }
