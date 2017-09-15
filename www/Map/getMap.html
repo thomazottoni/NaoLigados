@@ -28,12 +28,14 @@
                 <div class="map" id="map_canvas1"></div>
                 <pre class="prettyprint">
                     document.addEventListener("deviceready", function() {
-                        var div = document.getElementById("map_canvas1");
-                        var map = plugin.google.maps.Map.getMap(div);
+                        setTimeout(function() {
+                            var div = document.getElementById("map_canvas1");
+                            var map = plugin.google.maps.Map.getMap(div);
 
-                        map.one(plugin.google.maps.event.MAP_READY, function() {
-                            console.log("--> map_canvas1 : ready.");
-                          });      
+                            map.one(plugin.google.maps.event.MAP_READY, function() {
+                                console.log("--> map_canvas1 : ready.");
+                              });  
+                        },1000);    
                     }, false);
 
                 </pre>
