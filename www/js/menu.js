@@ -56,3 +56,15 @@ window.addEventListener('load', function() {
     isOpen = !isOpen;
   });
 });
+
+function ExibeMapa() {
+
+  setTimeout(function() {
+      var div = document.getElementById("map_canvas1");
+      var map = plugin.google.maps.Map.getMap(div);
+
+      map.one(plugin.google.maps.event.MAP_READY, function() {
+          console.log("--> map_canvas1 : ready.");
+        });
+  }, 1000);
+} 
