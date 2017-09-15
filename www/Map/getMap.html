@@ -27,13 +27,11 @@
                 </p>
                 <div class="map" id="map_canvas1"></div>
                 <pre class="prettyprint">
-                    setTimeout(function() {
-                      var div = document.getElementById("map_canvas1");
-                      var map = plugin.google.maps.Map.getMap(div);
-                      map.one(plugin.google.maps.event.MAP_READY, function() {
-                        console.log("--> map_canvas1 : ready.");
-                      });
-                    }, 3000);
+                    var div = document.getElementById("map_canvas1");
+                    var map = plugin.google.maps.Map.getMap(div);
+                    map.one(plugin.google.maps.event.MAP_READY, function() {
+                      console.log("--> map_canvas1 : ready.");
+                    });
                 </pre>
 
             </section>
