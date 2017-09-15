@@ -59,12 +59,10 @@ window.addEventListener('load', function() {
 
 function ExibeMapa() {
 
-  setTimeout(function() {
-      var div = document.getElementById("map_canvas1");
-      var map = plugin.google.maps.Map.getMap(div);
+    var div = document.getElementById("map_canvas1");
+    var map = plugin.google.maps.Map.getMap(div);
 
-      map.one(plugin.google.maps.event.MAP_READY, function() {
-          console.log("--> map_canvas1 : ready.");
-        });
-  }, 1000);
+    map.one(plugin.google.maps.event.MAP_READY, function() {
+        console.log("--> map_canvas1 : ready.");
+      });
 } 
