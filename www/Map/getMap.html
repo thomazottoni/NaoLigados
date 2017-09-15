@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="../code-prettify/prettify.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <script type="text/javascript" src="../cordova.js"></script>
-    <script type="text/javascript" src="../js/loader.js"></script>
     <script src="../code-prettify/run_prettify.js" async="async"></script>
     <script src="../js/menu.js" async="async"></script>
 </head>
@@ -28,16 +27,18 @@
                 </p>
                 <div class="map" id="map_canvas1"></div>
                 <script type="text/javascript">
-                    var map;
-                    document.addEventListener("deviceready", function() {
-                        var div = document.getElementById("map_canvas1");
-                        map = plugin.google.maps.Map.getMap(div);
+                    setTimeout(function() {
+                      var map;
+                      document.addEventListener("deviceready", function() {
+                          var div = document.getElementById("map_canvas1");
+                          map = plugin.google.maps.Map.getMap(div);
 
-                        map.one(plugin.google.maps.event.MAP_READY, function() {
-                            console.log("--> map_canvas1 : ready.");
-                          });
-                        
-                    }, false);
+                          map.one(plugin.google.maps.event.MAP_READY, function() {
+                              console.log("--> map_canvas1 : ready.");
+                            });
+                          
+                      }, false);
+                    }, 1000);
 
                 </script>
 
