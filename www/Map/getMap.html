@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../code-prettify/prettify.css" />
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <script type="text/javascript" src="../cordova.js"></script>
+    <script src="../code-prettify/run_prettify.js" async="async"></script>
     <script src="../js/menu.js" async="async"></script>
 </head>
 
@@ -25,7 +26,7 @@
                     After the <span class="highlihgt">deviceready</span>, you can create maps using <span class="highlight">plugin.google.maps.Map.getMap()</span>.
                 </p>
                 <div class="map" id="map_canvas1"></div>
-                <script type="text/javascript">
+                <pre class="prettyprint">
                     setTimeout(function() {
                       var div = document.getElementById("map_canvas1");
                       var map = plugin.google.maps.Map.getMap(div);
@@ -33,7 +34,7 @@
                         console.log("--> map_canvas1 : ready.");
                       });
                     }, 3000);
-                </script>
+                </pre>
 
             </section>
         </div>
