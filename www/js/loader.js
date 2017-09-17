@@ -14,9 +14,7 @@ function executeCode(pTag, loadDelay) {
   setTimeout(function() {
     var div = document.getElementById('map_canvas1'); 
     var map = plugin.google.maps.Map.getMap(div);  
-  }, loadDelay);
 
-  setTimeout(function() {
     map.one(plugin.google.maps.event.MAP_READY, function() 
        var onSuccess = function(location) {
         var msg = ["Current your location:\n",
@@ -48,7 +46,7 @@ function executeCode(pTag, loadDelay) {
       map.clear();
       map.getMyLocation(onSuccess, onError);
     );
-  }, 2000);
+  }, loadDelay);
 
 }
 
