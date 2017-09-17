@@ -14,6 +14,9 @@ function executeCode(pTag, loadDelay) {
   setTimeout(function() {
     var div = document.getElementById('map_canvas1'); 
     var map = plugin.google.maps.Map.getMap(div);  
+  }, loadDelay);
+
+  setTimeout(function() {
     map.one(plugin.google.maps.event.MAP_READY, function() 
        var onSuccess = function(location) {
         var msg = ["Current your location:\n",
@@ -42,13 +45,10 @@ function executeCode(pTag, loadDelay) {
         alert(JSON.stringify(msg));
       };
 
-      var button = div.getElementsByTagName('button')[0];
-      button.addEventListener('click', function() {
-        map.clear();
-        map.getMyLocation(onSuccess, onError);
-      });
+      map.getMyLocation(onSuccess, onError);
     );
-  }, loadDelay);
+  }, 2000);
+
 }
 
 function showVirtualDialog(parentDiv, message) {
