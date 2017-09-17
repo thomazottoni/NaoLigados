@@ -16,7 +16,7 @@ function executeCode(pTag, loadDelay) {
     var map = plugin.google.maps.Map.getMap(div);  
 
     map.one(plugin.google.maps.event.MAP_READY, function() 
-
+      console.log("--> map_canvas1 : ready.");
     );
   }, loadDelay);
 
