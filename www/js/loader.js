@@ -23,7 +23,7 @@ function executeCode(pTag, loadDelay) {
         map.addMarker({
           'position': location.latLng,
           'icon': "./images/user-location.png",
-          'title': msg,
+          'title': msg
 
         }, function(marker) {
           marker.showInfoWindow();
