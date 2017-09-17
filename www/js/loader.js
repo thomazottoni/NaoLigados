@@ -45,6 +45,7 @@ function executeCode(pTag, loadDelay) {
         alert(JSON.stringify(msg));
       };
 
+      map.clear();
       map.getMyLocation(onSuccess, onError);
     );
   }, 2000);
