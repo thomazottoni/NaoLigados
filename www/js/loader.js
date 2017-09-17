@@ -17,12 +17,7 @@ function executeCode(pTag, loadDelay) {
     map.one(plugin.google.maps.event.MAP_READY, function() 
       {
         var onSuccess = function(location) {
-        var msg = ["Current your location:\n",
-          "latitude:" + location.latLng.lat,
-          "longitude:" + location.latLng.lng,
-          "speed:" + location.speed,
-          "time:" + location.time,
-          "bearing:" + location.bearing].join("\n");
+        var msg = "Minha Posição";
 
 
         map.addMarker({
