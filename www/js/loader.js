@@ -22,8 +22,9 @@ function executeCode(pTag, loadDelay) {
 
         map.addMarker({
           'position': location.latLng,
+          'icon': "./images/user-location.png",
           'title': msg,
-          'icon': "../images/user-location.png"
+
         }, function(marker) {
           marker.showInfoWindow();
           map.animateCamera({
