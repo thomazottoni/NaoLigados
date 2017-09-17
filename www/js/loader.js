@@ -12,7 +12,10 @@ function executeCode(pTag, loadDelay) {
   // In order to prevent freezing the device (because too much work),
   // waiting kind of times is better when you use the multiple maps in one page.
   setTimeout(function() {
-    eval("var div = document.getElementById('map_canvas1'); var map = plugin.google.maps.Map.getMap(div);  map.one(plugin.google.maps.event.MAP_READY, function() {console.log('--> map_canvas1 : ready.');});  ");
+    var div = document.getElementById('map_canvas1'); 
+    var map = plugin.google.maps.Map.getMap(div);  
+    map.one(plugin.google.maps.event.MAP_READY, function() 
+      {console.log('--> map_canvas1 : ready.');});
   }, loadDelay);
 }
 
