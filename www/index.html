@@ -10,6 +10,7 @@
     <script type="text/javascript" src="cordova.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <script type="text/javascript" src="./js/loader.js"></script>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' gap:; script-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; object-src *; style-src 'self' data: 'unsafe-inline' *; img-src 'self' data:; media-src 'self' data:; font-src 'self' data:; connect-src *">
 </head>
 
@@ -18,15 +19,16 @@
 
       <h3 style="background-image:url(./images/logo.png);height:70px;background-repeat:no-repeat;padding-left:60px"><span style="white-space: nowrap;float:left;">Cordova GoogleMaps plugin</span><span style="white-space: nowrap;float:left;"> for iOS and Android</span></h3>
     </div>
-    <div id="contentView">
-        <div id="contentsFrame" style="padding-top:100px">
-            <h2>Classes</h2>
-            <table class="reference">
-                <tr>
-                    <th><a href="Map/getMap.html">getMap()</a></th>
-                    <td>Generate a map instance using <span class="highlight">plugin.google.maps.getMap()</span>.</td>
-                </tr>
+   <div id="contentView">
+        <div id="contentsFrame">
+            <section class="demo">
+                <h3>Residências sem ligações a rede de esgoto disponível</h3>
+                <p>
+                    Residências sem ligações a rede de esgoto disponível.
+                </p>
+                <div class="map" id="map_canvas1"></div>
 
+            </section>
         </div>
     </div>
 </body>
