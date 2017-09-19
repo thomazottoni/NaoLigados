@@ -91,26 +91,13 @@ function executeCode(pTag, loadDelay) {
 
           if (results.length) {
 
-            // Add a marker
-            map.addMarker({
-              'position': results[0].position,
-              'title':  JSON.stringify(results[0].position)
-            }, function(marker) {
-
-              // Move to the position
-              map.animateCamera({
-                'target': results[0].position,
-                'zoom': 17
-              }, function() {
-                marker.showInfoWindow();
-                isRunning = false;
-              });
-
+             // Move to the position
+            map.animateCamera({
+              'target': results[0].position,
+              'zoom': 17
+            }, function() {
+              isRunning = false;
             });
-
-          } else {
-            isRunning = false;
-          }
 
         });
       });
