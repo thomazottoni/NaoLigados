@@ -98,8 +98,7 @@ function executeCode(pTag, loadDelay) {
             }, function() {
               isRunning = false;
             });
-
-        });
+          };
       });
 
  
