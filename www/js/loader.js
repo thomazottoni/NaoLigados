@@ -79,7 +79,7 @@ function executeCode(pTag, loadDelay) {
         }
         isRunning = true;
 
-        var dialogDiv = showVirtualDialog(div, "Just a moment, please ...");
+        var dialogDiv = showVirtualDialog(div, "Um momento, por favor ...");
         setTimeout(function() {
           div.removeChild(dialogDiv);
         }, 3000);
@@ -91,14 +91,26 @@ function executeCode(pTag, loadDelay) {
 
           if (results.length) {
 
-             // Move to the position
-            map.animateCamera({
-              'target': results[0].position,
-              'zoom': 17
-            }, function() {
-              isRunning = false;
+            // Add a marker
+            map.addMarker({
+              'position': results[0].position,
+              'title':  JSON.stringify(results[0].position)
+            }, function(marker) {
+
+              // Move to the position
+              map.animateCamera({
+                'target': results[0].position,
+                'zoom': 17
+              }, function() {
+                marker.showInfoWindow();
+                isRunning = false;
+              });
+
             });
-          };
+
+          } else {
+            isRunning = false;
+          }
       });
 
  
