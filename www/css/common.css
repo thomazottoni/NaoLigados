@@ -21,29 +21,6 @@ body {
   left: 0;
 }
 
-div#slider {
-  width: 70%;
-}
-
-div#header {
-  white-space: nowrap;
-  background-color: lightgray;
-  font-size: 1em;
-  line-height: 1em;
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  height: 51px;
-  padding: 0;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  user-select: none;
-  z-index: 2;
-}
-div#header h2, div#header h3 {
-  text-align: center;
-}
 
 div#menuButton {
   width: 34px;
