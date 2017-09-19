@@ -1,9 +1,9 @@
 .map {
   width: 90%;
-  height: 400px;
+  height: 90%;
   border: 1px solid red;
   margin: 5%;
-  position: relative;
+  position: fixed;
 }
 html {
   margin: 0;
