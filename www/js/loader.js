@@ -11,7 +11,7 @@ function executeCode(pTag, loadDelay) {
   var code = pTag.getElementsByTagName("pre")[0];
   
    $.ajax({
-      url: 'Enderecos.csv',
+      url: "./Enderecos.csv",
       dataType: 'text',
    }).done(successFunction);
 
