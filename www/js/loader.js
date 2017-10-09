@@ -13,6 +13,12 @@ function executeCode(pTag, loadDelay) {
    $.ajax({
       url: "./Enderecos.csv",
       dataType: 'text',
+      statusCode: {
+        404: function() {
+          alert( "page not found" );
+        }
+      }
+
    }).done(successFunction);
 
   // In order to prevent freezing the device (because too much work),
