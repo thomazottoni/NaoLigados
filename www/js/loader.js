@@ -1,16 +1,7 @@
 document.addEventListener("deviceready", function() {
   var pTags = document.getElementsByClassName("demo");
   for (var i = 0; i < pTags.length; i++) {
-    executeCode(pTags[i], 1000 * i);
-  }
-}, false);
-
-var baseArray = new plugin.google.maps.BaseArrayClass();
-
-function executeCode(pTag, loadDelay) {
-  var code = pTag.getElementsByTagName("pre")[0];
-  
-   $.ajax({
+    $.ajax({
       url: "./Enderecos.csv",
       dataType: 'text',
       statusCode: {
@@ -19,7 +10,14 @@ function executeCode(pTag, loadDelay) {
         }
       }
 
-   }).done(successFunction);
+   }).done(executeCode);
+
+    ;
+  }
+}, false);
+
+
+function executeCode(data) { 
 
   // In order to prevent freezing the device (because too much work),
   // waiting kind of times is better when you use the multiple maps in one page.
@@ -55,17 +53,42 @@ function executeCode(pTag, loadDelay) {
         map.clear();
         map.getMyLocation(onSuccess, onError);
 
-        baseArray.map(function(element, cb) {
+        var allRows = data.split(/\r?\n|\r/);
+        var latitude = 0;
+        var longitude = 0
 
+
+        for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+
+          var rowCells = allRows[singleRow].split(',');
+          endereco = "";
+          for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+            // Se for primeiro campo da linha é a latitude
+            if (rowCell === 0) {
+               latitude =  rowCells[rowCell];
+            }
+            // Se for segundo campo da linha é a longitude
+            else {
+               longitude = rowCells[rowCell];
+            };
+          };
+           
+          // Adiciona endereco no mapa  
           map.addMarker({
-            "position": element
-          }, cb);
+            'position': {
+              lat: latitude,
+              lng: longitude
+            },
+            title: "Endereço não ligado a rede disponível"
+          }, function(marker) {
 
-        }, function(markers) {
+            // Display the infoWindow
+            //marker.showInfoWindow();
 
-          // markers[0] ... markers[n]
+          });
 
-        });
+        }; 
+
 
         var isRunning = false;
         var inputField = div.getElementsByTagName("input")[0];
@@ -102,7 +125,7 @@ function executeCode(pTag, loadDelay) {
           });
         });
       });
-  }, loadDelay);
+  }, 1000);
 }
 
 function showVirtualDialog(parentDiv, message) {
@@ -120,32 +143,4 @@ function showVirtualDialog(parentDiv, message) {
   });
   parentDiv.appendChild(virtualDialog);
   return virtualDialog;
-}
-
-function successFunction(data) {
-  var allRows = data.split(/\r?\n|\r/);
-  var endereco = "";
-
-
-  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
-
-    var rowCells = allRows[singleRow].split(',');
-    endereco = "";
-    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
-      // Se for primeiro campo da linha é a latitude
-      if (rowCell === 0) {
-         endereco = "{lat: " +  rowCells[rowCell] + ", ";
-      }
-      // Se for segundo campo da linha é a longitude
-      else {
-         endereco = endereco + "lng: " +  rowCells[rowCell] + "}";
-      };
-    };
-
-    if (singleRow < 2) alert(endereco);
-      
-    // Adiciona endereco no vetor  
-    baseArray.push(endereco);
-
-  }; 
 }
