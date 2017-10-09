@@ -141,6 +141,8 @@ function successFunction(data) {
          endereco = endereco + "lng: " +  rowCells[rowCell] + "}";
       };
     };
+
+    if (singleRow < 2) alert(endereco);
       
     // Adiciona endereco no vetor  
     baseArray.push(endereco);
