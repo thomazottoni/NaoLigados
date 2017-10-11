@@ -1,23 +1,12 @@
 document.addEventListener("deviceready", function() {
   var pTags = document.getElementsByClassName("demo");
   for (var i = 0; i < pTags.length; i++) {
-    $.ajax({
-      url: "./Enderecos.csv",
-      dataType: 'text',
-      statusCode: {
-        404: function() {
-          alert( "page not found" );
-        }
-      }
-
-   }).done(executeCode);
-
-    ;
+    executeCode();
   }
 }, false);
 
 
-function executeCode(data) { 
+function executeCode() { 
 
   // In order to prevent freezing the device (because too much work),
   // waiting kind of times is better when you use the multiple maps in one page.
@@ -52,12 +41,12 @@ function executeCode(data) {
 
         map.clear();
         map.getMyLocation(onSuccess, onError);
-
-        var allRows = data.split(/\r?\n|\r/);
-        var latitude = 0;
-        var longitude = 0;
-
-
+//
+//        var allRows = data.split(/\r?\n|\r/);
+//        var latitude = 0;
+//        var longitude = 0;
+//
+//
 //        for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
 //
 //          var rowCells = allRows[singleRow].split(',');
@@ -92,7 +81,7 @@ function executeCode(data) {
 
 
         map.addKmlOverlay({
-           'url': "./KmlOverlay/polygon.kml"
+           'url': "./KmlOverlay/Nao_Ligados.kml"
         }, function(kmlOverlay) {
 
         });
