@@ -55,39 +55,47 @@ function executeCode(data) {
 
         var allRows = data.split(/\r?\n|\r/);
         var latitude = 0;
-        var longitude = 0
+        var longitude = 0;
 
 
-        for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+//        for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+//
+//          var rowCells = allRows[singleRow].split(',');
+//          endereco = "";
+//          for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+//            // Se for primeiro campo da linha é a latitude
+//            if (rowCell === 0) {
+//               latitude =  rowCells[rowCell];
+//            }
+//            // Se for segundo campo da linha é a longitude
+//            else {
+//               longitude = rowCells[rowCell];
+//            };
+//          };
+//           
+//          // Adiciona endereco no mapa  
+//          map.addMarker({
+//            'position': {
+//              lat: latitude,
+//              lng: longitude
+//            },
+//            title: "Endereço não ligado a rede disponível"
+//          }, function(marker) {
+//
+//            // Display the infoWindow
+//            //marker.showInfoWindow();
+//
+//          });
+//
+//        }; 
 
-          var rowCells = allRows[singleRow].split(',');
-          endereco = "";
-          for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
-            // Se for primeiro campo da linha é a latitude
-            if (rowCell === 0) {
-               latitude =  rowCells[rowCell];
-            }
-            // Se for segundo campo da linha é a longitude
-            else {
-               longitude = rowCells[rowCell];
-            };
-          };
-           
-          // Adiciona endereco no mapa  
-          map.addMarker({
-            'position': {
-              lat: latitude,
-              lng: longitude
-            },
-            title: "Endereço não ligado a rede disponível"
-          }, function(marker) {
 
-            // Display the infoWindow
-            //marker.showInfoWindow();
 
-          });
+        map.addKmlOverlay({
+           'url': "./KmlOverlay/polygon.kml"
+        }, function(kmlOverlay) {
 
-        }; 
+        });
 
 
         var isRunning = false;
