@@ -81,7 +81,7 @@ function executeCode() {
 
 
         map.addKmlOverlay({
-           'url': "./KmlOverlay/Posicoes.kmz"
+           'url': "./KmlOverlay/factiveis_2parte.kml"
         }, function(kmlOverlay) {
 
         });
