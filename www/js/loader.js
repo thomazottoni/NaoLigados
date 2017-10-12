@@ -81,7 +81,7 @@ function executeCode() {
 
 
         map.addKmlOverlay({
-           'url': "./KmlOverlay/enderecos_praia_da_costa.xlsx.kml"
+           'url': "./KmlOverlay/Posicoes.kmz"
         }, function(kmlOverlay) {
 
         });
