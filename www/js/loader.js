@@ -80,11 +80,19 @@ function executeCode() {
 
 
 
-        map.addKmlOverlay({
-           'url': "./KmlOverlay/enderecos_praia_da_costa.xlsx.kml"
-        }, function(kmlOverlay) {
+//        map.addKmlOverlay({
+//           'url': "./KmlOverlay/enderecos_praia_da_costa.xlsx.kml"
+//        }, function(kmlOverlay) {
+//
+//        });
 
-        });
+        var layer = new google.maps.FusionTablesLayer({
+            query: {
+              select: LAT,
+              from: '1f4q8joJ1S7LwYHg5CgmFONKWqt3m1rp3qwVWID_E'
+            }
+          });
+          layer.setMap(map);
 
 
         var isRunning = false;
