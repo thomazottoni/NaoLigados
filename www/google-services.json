@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "870094492744",
+    "firebase_url": "https://naoligados-1505218490413.firebaseio.com",
+    "project_id": "naoligados-1505218490413",
+    "storage_bucket": "naoligados-1505218490413.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870094492744:android:abae12713e7e5064",
+        "android_client_info": {
+          "package_name": "com.phonegap.naoligados"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870094492744-dt4r4sdhblgfeccvl0ga32gcuske8g7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHu9NYXlIpNir8NXIEl4u7PeLh3LvxGjo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
