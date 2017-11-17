@@ -2,7 +2,7 @@ document.addEventListener("deviceready", function() {
 
   window.plugins.googleplus.login(
     {
-      'webClientId': 'AIzaSyB7p1MNp2NLZTlb86Az5JtSqWTAMK0nsLI', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+      'webClientId': '870094492744-dt4r4sdhblgfeccvl0ga32gcuske8g7d.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
       'offline': true, // optional, but requires the webClientId - if set to true the plugin will also return a serverAuthCode, which can be used to grant offline access to a non-Google server
     },
     function (obj) {
