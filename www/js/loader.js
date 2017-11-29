@@ -1,17 +1,21 @@
 document.addEventListener("deviceready", function() {
 
-  window.plugins.googleplus.login(
-    {
-      'webClientId': '870094492744-dt4r4sdhblgfeccvl0ga32gcuske8g7d.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
-      'offline': true, // optional, but requires the webClientId - if set to true the plugin will also return a serverAuthCode, which can be used to grant offline access to a non-Google server
-    },
-    function (obj) {
-      alert(JSON.stringify(obj)); // do something useful instead of alerting
-    },
-    function (msg) {
-      alert('error: ' + msg);
-    }
-  );
+ var provider = new firebase.auth.GoogleAuthProvider();
+
+ firebase.auth().signInWithRedirect(provider).then(function() {
+  firebase.auth().getRedirectResult().then(function(result) {
+    // This gives you a Google Access Token.
+    // You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // ...
+  }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+  });
+});
 
   var pTags = document.getElementsByClassName("demo");
   for (var i = 0; i < pTags.length; i++) {
