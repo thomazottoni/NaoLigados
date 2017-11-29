@@ -15,6 +15,9 @@
     <link rel="stylesheet" type="text/css" href="./css/index.css" />
     <script type="text/javascript" src="./js/loader.js"></script>
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' gap:; script-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; object-src *; style-src 'self' data: 'unsafe-inline' *; img-src 'self' data:; media-src 'self' data:; font-src 'self' data:; connect-src *">
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+    https://naoligados-1505218490413.firebaseapp.com/__/auth/handler
 </head>
 
 <body>
@@ -33,7 +36,19 @@
     </div>
 
 
-
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB7p1MNp2NLZTlb86Az5JtSqWTAMK0nsLI",
+        authDomain: "naoligados-1505218490413.firebaseapp.com",
+        databaseURL: "https://naoligados-1505218490413.firebaseio.com",
+        projectId: "naoligados-1505218490413",
+        storageBucket: "naoligados-1505218490413.appspot.com",
+        messagingSenderId: "870094492744"
+      };
+      firebase.initializeApp(config);
+    </script>
 </body>
 
 
