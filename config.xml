@@ -63,7 +63,7 @@
         <variable name="URL_SCHEME" value="1:870094492744:ios:abae12713e7e5064" />
     </plugin>
     <universal-links>
-        <host name="https://m54x5.app.goo.gl/" scheme="https" />
+        <host name="https://m54x5.app.goo.gl/V9Hh" scheme="https" />
         <host name="naoligados-1505218490413.firebaseapp.com" scheme="https">
             <path url="/__/auth/callback"/>
         </host>
