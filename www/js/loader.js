@@ -14,6 +14,7 @@ document.addEventListener("deviceready", function() {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
+    alert(errorCode + " - " + errorMessage);
   });
 });
 
